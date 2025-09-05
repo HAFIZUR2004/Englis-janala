@@ -1,0 +1,15 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+.bangla-font{
+    font-family: "Hind Siliguri", sans-serif;
+
+}
+
+.active{
+    background-color: #422ad5;
+    color: white;
+}
+
+/* <h3 class="mb-[12px] bangla-font text-[14px] text-[#79716B]">আপনি এখনো কোন Lesson Select করেন নি</h3>
+      <h1 class="text-[35px] font-semibold text-[#292524] bangla-font">একটি Lesson Select করুন।</h1> */
