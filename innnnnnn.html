@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal Section Active Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .active-link {
+      color: #f97316; /* orange-500 */
+      font-weight: bold;
+      border-bottom: 2px solid #f97316;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md">
+    <ul class="flex justify-center space-x-8 p-4">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#nepal" class="nav-link">Nepal</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="h-screen flex items-center justify-center bg-blue-200">
+    <h1 class="text-4xl">Home Section</h1>
+  </section>
+  <section id="about" class="h-screen flex items-center justify-center bg-green-200">
+    <h1 class="text-4xl">About Section</h1>
+  </section>
+  <section id="services" class="h-screen flex items-center justify-center bg-yellow-200">
+    <h1 class="text-4xl">Services Section</h1>
+  </section>
+  <section id="nepal" class="h-screen flex items-center justify-center bg-red-200">
+    <h1 class="text-4xl">Welcome to Nepal Section</h1>
+  </section>
+  <section id="contact" class="h-screen flex items-center justify-center bg-purple-200">
+    <h1 class="text-4xl">Contact Section</h1>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60; // navbar height adjust
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active-link");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active-link");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
